@@ -7,7 +7,7 @@
   digits: new RegExp(/^[\d() \.\:\-\+#]+$/),
   isodate: new RegExp(/^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/)
 }
-/*eslint-enable*/
+/* eslint-enable */
 
 export default {
   name: 'InputTag',
