@@ -17,9 +17,9 @@ export default {
       type: Array,
       default: () => []
     },
-    label: {
+    inputId: {
       type: String,
-      default: ''
+      default: undefined
     },
     placeholder: {
       type: String,
@@ -136,20 +136,18 @@ export default {
       <span>{{ tag }}</span>
       <a v-if="!readOnly" @click.prevent.stop="remove(index)" class="remove"></a>
     </span>
-    <label>
-      {{ label }}
-      <input
-        v-if                     = "!readOnly && !isLimit"
-        ref                      = "inputtag"
-        :placeholder             = "placeholder"
-        type                     = "text"
-        v-model                  = "newTag"
-        v-on:keydown.delete.stop = "removeLastTag"
-        v-on:keydown             = "addNew"
-        v-on:blur                = "addNew"
-        class                    = "new-tag"
-      />
-    </label>
+    <input
+      v-if                     = "!readOnly && !isLimit"
+      :id                      = "inputId"
+      ref                      = "inputtag"
+      :placeholder             = "placeholder"
+      type                     = "text"
+      v-model                  = "newTag"
+      v-on:keydown.delete.stop = "removeLastTag"
+      v-on:keydown             = "addNew"
+      v-on:blur                = "addNew"
+      class                    = "new-tag"
+    />
   </div>
 </template>
 
